@@ -10,6 +10,7 @@
     'category': "Accounting & Finance",
     'depends': [
         'base',
+        'account',
         'analytic',
     ],
     'data': [
@@ -20,4 +21,3 @@
     'installable': True,
     # 'pre_init_hook': 'pre_init_hook',
 }
-
