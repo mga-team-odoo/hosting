@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+
+        <menuitem id="menu_hosting" 
+            sequence="40"
+            name="Hosting"/>
+
+        <menuitem id="menu_hosting_account" 
+            parent="menu_hosting"
+            sequence="10"
+            name="Account"/>
+
+    
+    </data>
+</openerp>

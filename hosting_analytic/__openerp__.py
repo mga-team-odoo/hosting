@@ -13,6 +13,8 @@
         'analytic',
     ],
     'data': [
+        'views/menu.xml',
+        'views/analytic.xml',
     ],
     'application': False,
     'installable': True,

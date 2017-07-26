@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+
+        <record id="analytic_account_inherited_hosting_form" model="ir.ui.view">
+            <field name="name">account.analytic.account.hosting.form.inherit</field>
+            <field name="model">account.analytic.account</field>
+            <field name="inherit_id" ref="analytic.view_account_analytic_account_form"/>
+            <field eval="25" name="priority"/>
+            <field name="arch" type="xml">
+                <xpath expr='//div[@name="project"]' position='inside'>
+                    <field name="use_hosting"/>
+                    <label for="use_hosting"/>
+                </xpath>
+            </field>
+        </record>
+        
+        <record model="ir.actions.act_window" id="act_open_acc_view">
+            <field name="name">Analytic Accounts</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">account.analytic.account</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain">[('use_hosting','=',True)]</field>
+            <field name="context">{'search_default_use_hosting': True, 'default_use_hosting': True}</field>
+            <field name="view_id" ref="account.view_account_analytic_account_tree"/>
+            <field name="search_view_id" ref="account.view_account_analytic_account_search"/>
+        </record>
+        
+        <menuitem id="menu_acc"
+            parent="menu_hosting_account"
+            sequence="20"
+            action="act_open_acc_view"/>
+
+    </data>
+</openerp>
