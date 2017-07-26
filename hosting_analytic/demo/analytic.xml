@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+
+        <record id="analytic_hosting_1" model="account.analytic.account">
+            <field name="name">Odoo Hosting 1</field>
+            <field name="use_hosting" eval="True"/>
+            <field name="type">contract</field>
+            <field name="date_start" eval="time.strftime('%Y-%m-01')"/>
+            <field name="partner_id" ref="base.res_partner_2"/>
+        </record>
+    
+    </data>
+</openerp>

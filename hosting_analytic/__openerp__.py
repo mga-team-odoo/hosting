@@ -16,6 +16,7 @@
     'data': [
         'views/menu.xml',
         'views/analytic.xml',
+        'demo/analytic.xml',
     ],
     'application': False,
     'installable': True,
