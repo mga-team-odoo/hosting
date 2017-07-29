@@ -10,3 +10,8 @@ class AccountAnalyticAccount(models.Model):
 
     use_hosting = fields.Boolean(
         string='Hosting', help='Hosting account')
+    period_invoice = fields.Integer(
+        string='Period to invoice', help='Period to invoice in month',
+        default=1)
+    next_invoice_date = fields.Date(
+        string='Next invoice', help='Date for the next invoice date')
