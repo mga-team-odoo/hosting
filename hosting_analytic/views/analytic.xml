@@ -18,6 +18,16 @@
                             <field name="period_invoice"/>
                             <field name="next_invoice_date"/>
                         </group>
+                        <group colspan="4">
+                            <field name="hosting_line_ids" nolabel="1" widget="one2many_list">
+                                <tree string="Lines" editable="bottom">
+                                    <field name="sequence" widget="handle"/>
+                                    <field name="product_id" required="1"/>
+                                    <field name="product_qty" required="1"/>
+                                    <field name="product_uom_id" required="1"/>
+                                </tree>
+                            </field>
+                        </group>
                     </page>
                 </xpath>
             </field>

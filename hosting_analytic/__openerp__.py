@@ -14,6 +14,7 @@
         'analytic',
     ],
     'data': [
+        'security/ir.model.access.csv',
         'views/menu.xml',
         'views/analytic.xml',
         'demo/analytic.xml',
