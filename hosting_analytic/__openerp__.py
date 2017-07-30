@@ -19,6 +19,9 @@
         'views/analytic.xml',
         'demo/analytic.xml',
     ],
+    'test': [
+        'test/create_contract.yml',
+    ],
     'application': False,
     'installable': True,
     # 'pre_init_hook': 'pre_init_hook',
