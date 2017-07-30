@@ -2,12 +2,54 @@
 <openerp>
     <data>
 
+        <record id="product_category_hosting" model="product.category">
+            <field name="parent_id" ref="product.product_category_all"/>
+            <field name="name">Hosting</field>
+        </record>
+
+        <record id="prod_hosting_1" model="product.product">
+            <field name="name">Odoo Basic</field>
+            <field name="categ_id" ref="product_category_hosting"/>
+            <field name="standard_price">25.5</field>
+            <field name="list_price">38.25</field>
+            <field name="type">service</field>
+            <field name="uom_id" ref="product.product_uom_unit"/>
+            <field name="uom_po_id" ref="product.product_uom_unit"/>
+        </record>
+
+        <record id="prod_hosting_2" model="product.product">
+            <field name="name">Odoo Premium</field>
+            <field name="categ_id" ref="product_category_hosting"/>
+            <field name="standard_price">35.5</field>
+            <field name="list_price">50.99</field>
+            <field name="type">service</field>
+            <field name="uom_id" ref="product.product_uom_unit"/>
+            <field name="uom_po_id" ref="product.product_uom_unit"/>
+        </record>
+
+        <record id="prod_hosting_cert" model="product.product">
+            <field name="name">SSL Certificate Let's Encrypt</field>
+            <field name="categ_id" ref="product_category_hosting"/>
+            <field name="standard_price">5.5</field>
+            <field name="list_price">9.9</field>
+            <field name="type">service</field>
+            <field name="uom_id" ref="product.product_uom_unit"/>
+            <field name="uom_po_id" ref="product.product_uom_unit"/>
+        </record>
+
         <record id="analytic_hosting_1" model="account.analytic.account">
             <field name="name">Odoo Hosting 1</field>
             <field name="use_hosting" eval="True"/>
             <field name="type">contract</field>
             <field name="date_start" eval="time.strftime('%Y-%m-01')"/>
             <field name="partner_id" ref="base.res_partner_2"/>
+        </record>
+
+        <record id="ah_1_line_1" model="hosting.analytic.lines">
+            <field name="contract_id" ref="analytic_hosting_1"/>
+            <field name="product_id" ref="prod_hosting_1"/>
+            <field name="product_qty" eval="1.0"/>
+            <field name="product_uom_id" ref="product.product_uom_unit"/>
         </record>
     
     </data>

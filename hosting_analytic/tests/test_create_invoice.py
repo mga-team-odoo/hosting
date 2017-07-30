@@ -11,3 +11,7 @@ class TestCreateInvoice(TransactionCase):
     def setUp(self):
         super(TestCreateInvoice, self).setUp()
         cr, uid = self.cr, self.uid
+        self.contract = self.registry('account.analytic.account')
+        self.c_ids = self.contract.search(
+            cr, uid, [('use_hosting', '=', True)])
+        self.assertTrue(len(self.c_ids) >= 1, 'Demo data install new contract')
